@@ -1,0 +1,50 @@
+type TaskStatus = 
+ variant {
+   completed;
+   pending;
+ };
+type TaskId = nat32;
+type Task = 
+ record {
+   description: text;
+   id: TaskId;
+   owner: principal;
+   status: TaskStatus;
+ };
+type GetTaskResultOk = 
+ variant {
+   task: Task;
+   taskAddedSuccessfully;
+   taskStatusUpdatedSuccessfully;
+   tasks: vec Task;
+   theTaskWasDeleted;
+ };
+type GetTaskResultErr = 
+ variant {
+   countryDataNotFound;
+   errModuleHttp;
+   taskIsAlreadyInTheRequestedStatus;
+   taskNotAdded;
+   taskNotFound;
+   taskNotFoundOrYouDoNotOwnThisTask;
+   userDoesNotExist;
+   userNotAuthenticated;
+   youAreNotTheOwnerOfThisTask;
+   youDoNotHavePermissionToViewThisTask;
+ };
+type GetTaskResult = 
+ variant {
+   err: GetTaskResultErr;
+   ok: GetTaskResultOk;
+ };
+service : {
+  addTask: (text) -> (GetTaskResult);
+  addTaskForPrincipal: (text, principal) -> (GetTaskResult);
+  delTask: (TaskId) -> (GetTaskResult);
+  getAllTasks: () -> (vec Task) query;
+  getMyTasks: () -> (GetTaskResult) query;
+  getTaskById: (TaskId) -> (GetTaskResult) query;
+  getTasksByOwner: (principal) -> (vec Task) query;
+  updateTaskStatus: (TaskId, TaskStatus) -> (GetTaskResult);
+  whoami: () -> (principal) query;
+}

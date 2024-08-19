@@ -1,0 +1,9 @@
+// Version: 1.0.0
+type Task =
+  {description : Text; id : TaskId; owner : Principal; status : TaskStatus};
+type TaskId = Nat32;
+type TaskStatus = {#completed; #pending};
+actor {
+  stable var taskIdCounter : Nat32;
+  stable var tasks : [Task]
+};
