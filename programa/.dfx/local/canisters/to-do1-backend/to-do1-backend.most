@@ -1,7 +1,0 @@
-// Version: 1.0.0
-type Profile =
-  {country : Text; email : Text; owner : Principal; username : Text};
-actor {
-  stable var profiles :
-    [var ?([var ?Text], [var ?Profile], [var Nat], [var Nat32])]
-};
