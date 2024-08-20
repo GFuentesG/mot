@@ -12,7 +12,6 @@ Tareas tiene como caracteristicas:
 - Bloqueo de tareas que no pertenescan al propio usuario
 - Uso de identidad o login para interactuar con los sistemas y realizar los filtros
 - Validaciones de datos del perfil
-- Cambio de estado de tareas
 - Consumo base de api externa web2 para obtener datos del pais del usuario 
 - Uso de arquitectura por capas
 
