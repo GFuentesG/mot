@@ -2,7 +2,7 @@
 ---
 Nuestro sistema de identidad, Registro de perfiles, obtencion de datos y Supervision de
 Tareas tiene como caracteristicas:
-<span style="color:blue">Frase de prueba en azul</span>
+
 - Administrar usuarios para la Supervision de tareas
 - Adicion de tareas por el Supervidor o por el usuario
 - Cambio de estado de la tarea por el usuario
