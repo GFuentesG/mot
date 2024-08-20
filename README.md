@@ -1,4 +1,4 @@
-# PROGRAMA DE REGISTRO Y SUPERVISION DE TAREAS
+# PROGRAMA DE REGISTRO DE USUARIO Y SUPERVISION DE TAREAS
 ---
 Nuestro sistema de identidad, Registro de perfiles, obtencion de datos y Supervision de
 Tareas tiene como caracteristicas:
